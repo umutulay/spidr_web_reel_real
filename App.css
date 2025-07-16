@@ -2,8 +2,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
 }
 
 #root {
@@ -53,14 +53,16 @@ body {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background: #fff;
+  background: #1e1e1e; /* Darker form background */
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adjusted shadow for dark theme */
+  position: relative; /* Ensure form is layered correctly */
+  z-index: 1; /* Place form above the background effect */
 }
 
 h1 {
   text-align: center;
-  color: #2c3e50;
+  color: #ffffff; /* Light text for heading */
 }
 
 form {
@@ -76,15 +78,17 @@ label {
 input {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #555; /* Darker border */
   border-radius: 4px;
   margin-top: 5px;
+  background-color: #333; /* Dark input background */
+  color: #fff; /* Light input text */
 }
 
 button {
   padding: 10px;
   font-size: 16px;
-  background-color: #2c3e50;
+  background-color: #007bff; /* A bright color for the button */
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -93,5 +97,26 @@ button {
 }
 
 button:hover {
-  background-color: #34495e;
+  background-color: #0056b3; /* A darker shade for hover */
+}
+
+#spider-web-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    repeating-conic-gradient(from 0deg at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.1) 0deg 1deg,
+      transparent 1deg 30deg
+    ),
+    repeating-radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 50px
+    );
 }
